@@ -31,7 +31,7 @@ export function Polaroid(props) {
     useFrame(() => {
         if (groupRef.current) {
             const rotationY = (scroll.offset * Math.PI * 2); // Rotate based on scroll
-            groupRef.current.rotation.z = rotationY;
+            // groupRef.current.rotation.z = rotationY;
 
             const target = isHovered ? new THREE.Vector3(groupRef.current.position.x, groupRef.current.position.y, 0.5) : defaultPosition.current;
             groupRef.current.position.lerp(target, 0.1);
@@ -43,7 +43,7 @@ export function Polaroid(props) {
         <group {...props} ref={groupRef} dispose={null}
                onPointerOver={() => setIsHovered(true)}
                onPointerOut={() => setIsHovered(false)}>
-            <group rotation={[Math.PI / 2, Math.PI / 2, 0]} scale={3.129} position={[0, 0, -1]}>
+            <group rotation={[Math.PI / 2, Math.PI / 2, 0]} scale={9} position={[-33.5, 5, -1]}>
                 <mesh geometry={nodes.Plane_1.geometry} material={materials.base} />
                 <mesh geometry={nodes.Plane_2.geometry} material={materials.image} />
             </group>
