@@ -11,17 +11,19 @@ import { Name } from "../../public/three/Name.jsx";
 
 
 export const Experience = () => {
-    const modelUrl = "./models/crane.glb"; //
+    const modelUrl = "../../public/three/Crane.jsx"; //
     return (
         <>     
             {/* <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} /> */}
             <ScrollControls pages={1.2} damping={0.1}>
                 <Scroll>
                 <Polaroid />
+
+                <ModelCloud url={"./models/crane.glb"}/>
                 <>
                 // These circles will orbit around the center point
                 <Circle position={[60, 3, -8]} r={60} />
-                <Circle position={[60, 3, -8]} r={66} rotationSpeed={0.1} rotation={[Math.PI/2 +2.4, 1.2, 0]}/>
+                <Circle position={[3, 3, 0]} r={4} rotationSpeed={0.1} rotation={[Math.PI/2, 1, 0]}/>
                 </>
                 
 

@@ -36,7 +36,7 @@ export function Circle({ position: [x, y, z], opacity = 1, r, rotationSpeed = 0,
             if (pointsRef.current) {
                 pointsRef.current.rotation.set(...rotation);
             }
-        }, [rotation]); // Update rotation when prop changes
+        }, [rotation]); // Update rotation 
 
     // Orbiting logic
     useFrame((state, delta) => {

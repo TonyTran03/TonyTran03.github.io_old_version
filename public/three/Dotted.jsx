@@ -22,7 +22,7 @@ export function Dotted({position: [x, y, z]}) {
         size: 0.005,
         color: 'white' // Added a color for better visibility
     }), []);
-
+    
     // useFrame hook to animate or interact with the scene on every frame
     useFrame((state) => {
         const time = state.clock.getElapsedTime();
