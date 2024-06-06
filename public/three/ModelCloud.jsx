@@ -13,6 +13,7 @@ function ModelCloud({ url, position:[x,y,z] }) {
       }
     });
 
+    const myColor = '#ffff'
     if (!geometry) {
       console.error('No geometry found in GLB file.');
       return null;
