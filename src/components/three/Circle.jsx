@@ -2,7 +2,7 @@ import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { BufferAttribute, BufferGeometry, PointsMaterial } from 'three';
 
-export function Circle({ position: [x, y, z], opacity = 1, r, rotationSpeed = 0,  rotation = [0,0,0]}) {
+export function Circle({ position: [x, y, z], opacity = 1, r, rotationSpeed = 0,  rotation = [0,0,0], maxRotation = Math.PI * 2}) {
     const pointsRef = useRef();
     
     const particlesGeometry = useMemo(() => {
@@ -41,8 +41,13 @@ export function Circle({ position: [x, y, z], opacity = 1, r, rotationSpeed = 0,
     // Orbiting logic
     useFrame((state, delta) => {
         if (pointsRef.current) {
-            // Incrementally rotate the position around the Y axis
+            // Incrementally rotate the position around the Z axis
             pointsRef.current.rotation.z -= rotationSpeed * delta;
+
+            // Ensure rotation doesn't exceed maxRotation
+            if (pointsRef.current.rotation.z < -maxRotation) {
+                pointsRef.current.rotation.z += maxRotation;
+            }
         }
     });
 

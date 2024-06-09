@@ -4,3 +4,20 @@
 body, html {
 
 }
+.svg-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding-left: 25px;
+}
+
+.svg-container svg {
+  width: 150px; /* Adjust size as needed */
+  height: 150px;
+}
+
+.svg-container:hover {
+  transform: scale(1.1); /* Example hover effect */
+}

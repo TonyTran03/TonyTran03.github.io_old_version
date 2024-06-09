@@ -30,11 +30,11 @@ function ModelCloud({ url, position= [0, 0, 0] }) {
     
     const material = new PointsMaterial({
       color: 'pink',
-      size: 15,
+      size: 12,
       sizeAttenuation: false
     });
 
-    return <points ref={pointRef} geometry={geometry} material={material} scale={1} />;
+    return <points ref={pointRef} geometry={geometry} material={material} scale={1} rotation={[0,Math.PI/2, Math.PI/2]}/>;
 }
 
 export default ModelCloud;
