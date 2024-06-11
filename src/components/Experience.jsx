@@ -38,7 +38,7 @@ export const Experience = () => {
       <ScrollControls pages={2} damping={0.1} onScroll={handleScroll} >
         <Scroll>
           <CameraControls ref={controls} enabled={false}/>
-          <Polaroid />
+       
           <Rocketship />
           <>
             <Circle position={[60, 3, -8]} r={55} />
@@ -59,9 +59,9 @@ export const Experience = () => {
           <NameHover />
           <div className="space-y-64">
             <Introduction />
-            <div className="glass">
+
               <Project />
-            </div>
+
           </div>
         </Scroll>
       </ScrollControls>

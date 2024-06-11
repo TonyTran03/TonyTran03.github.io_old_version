@@ -29,27 +29,28 @@ export function Rocketship(props) {
     }, []);
 
     useFrame((state) => {
-      const targetX = mousePosition.x * size.width / 25;  // Normalizing mouse x
-      const targetY = mousePosition.y * size.height /25; // Normalizing mouse y
-  
-      // Interpolation factor, closer to 1 makes the movement faster
-      const lerpFactor = 0.05;
-  
-      if (groupRef.current) {
-          currentPosition.current.x += (targetX - currentPosition.current.x) * lerpFactor;
-          currentPosition.current.y += (targetY - currentPosition.current.y) * lerpFactor;
-  
-          // Calculate the angle to rotate towards
-          const angle = Math.atan2(
-              currentPosition.current.y - groupRef.current.position.y,
-              currentPosition.current.x - groupRef.current.position.x
-          );
-  
-          // Apply rotation and position
-          groupRef.current.rotation.z = angle + Math.PI / 2; // Adjusting by π/2 depending on initial model orientation
-          groupRef.current.position.set(currentPosition.current.x, currentPosition.current.y, -2); // Setting z-position
-      }
-  });
+        const targetX = mousePosition.x * size.width / 25;  // Normalizing mouse x
+        const targetY = mousePosition.y * (size.height) / 25; // Normalizing mouse y
+
+        // Interpolation factor, closer to 1 makes the movement faster
+        const lerpFactor = 0.05;
+
+        if (groupRef.current) {
+            currentPosition.current.x += (targetX - currentPosition.current.x) * lerpFactor;
+            currentPosition.current.y += (targetY - currentPosition.current.y) * lerpFactor;
+
+            // Calculate the angle to rotate towards
+            const angle = Math.atan2(
+                currentPosition.current.y - groupRef.current.position.y,
+                currentPosition.current.x - groupRef.current.position.x
+            );
+
+            // Apply rotation and position
+            groupRef.current.rotation.z = angle + Math.PI / 2; // Adjusting by π/2 depending on initial model orientation
+            groupRef.current.position.set(currentPosition.current.x, currentPosition.current.y,0); // Adjust z-position if needed
+        }
+    });
+
     return (
         <group ref={groupRef} {...props} dispose={null} rotation={[-Math.PI , -Math.PI, 0]} scale={0.2}>
             <mesh geometry={nodes.Rocket_Ship_Circle003_1.geometry} material={materials.F44336} />
