@@ -10,7 +10,7 @@ export function Name() {
             <Text 
                 position={[15,5, 1]} // Adjust position based on the size and placement of the box
                 fontSize={3}
-                font={"/public/fonts/Poppins-Regular.ttf"}
+                font={"/fonts/Poppins-Regular.ttf"} 
             >
                 T o n y T r a n🚀
 

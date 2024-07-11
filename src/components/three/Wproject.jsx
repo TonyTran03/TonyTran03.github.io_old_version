@@ -15,7 +15,7 @@ export function Wproject() {
             <Text 
                 position={[-22,-17, 1]} // Adjust position based on the size and placement of the box
                 fontSize={2}
-                font={"/public/fonts/Poppins-Regular.ttf"}
+                font={"/fonts/Poppins-Regular.ttf"} 
             >
                 P r o j e c t s
 
