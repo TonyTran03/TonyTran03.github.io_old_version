@@ -12,7 +12,7 @@ const Project = () => {
   const swiperRef = useRef(null);
 
   useEffect(() => {
-    fetch('/src/components/projects.json')
+    fetch('/projects.json')
       .then(response => response.json())
       .then(data => {
         setProjects(data);
