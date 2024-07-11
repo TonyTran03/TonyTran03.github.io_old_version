@@ -8,6 +8,7 @@ import Introduction from "./Introduction.jsx";
 import Project from "./Projects.jsx";
 import { Rocketship } from "./three/Rocketship.jsx";
 import { useEffect, useRef, useState } from "react";
+import { Wproject } from "./three/Wproject.jsx";
 
 export const Experience = () => {
   const controls = useRef();
@@ -35,7 +36,7 @@ export const Experience = () => {
 
   return (
     <>
-      <ScrollControls pages={2} damping={0.1} onScroll={handleScroll} >
+      <ScrollControls pages={1.8} damping={0.1} onScroll={handleScroll} >
         <Scroll>
           <CameraControls ref={controls} enabled={false}/>
        
@@ -53,6 +54,7 @@ export const Experience = () => {
           <Dotted position={[-80, 0, -6]} />
           <Dotted position={[100, 0, -6]} />
           <Name />
+          <Wproject/>
         </Scroll>
 
         <Scroll html>

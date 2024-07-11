@@ -46,9 +46,17 @@ button.fixed {
   .text-section h1 {
     font-size: 1rem;
   }
-
+  .dropdown, .swiper-container {
+      width: 100%;
+      padding: 10px;
+    }
+  
 }
 
+
+  .btn-accent{
+  padding: 10px;
+  }
 .page {
   height: 100vh;
   display: flex;
@@ -62,82 +70,114 @@ button.fixed {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  overflow: hidden;
-  position: relative;
+  justify-content: flex-start;  
   width: 100%;
-  height: 100%;
+  height: 100vh;    
 }
 
-.projects-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 20px;
-  width: 60%;
-  box-sizing: border-box;
-}
 
 .project-item {
-  min-width: 200px;
-  margin: 0 10px;
-  flex-shrink: 0;
-  background-color: #f8f8f8;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-.scroll-buttons {
+  width: 30vh;
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
 }
 
-.btn-project {
-  background-color: #444;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
+
+.project-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
-.btn-project:disabled {
-  background-color: #888;
-  cursor: not-allowed;
-}
+
+
+
 
 .project-description {
   font-size: 14px;
-  color: #333;
+  color: #333;  
+  overflow: visible;  
+}
+.project-section {
+
+  width: 100%;
+  height: 35vh;
+  background: rgba(255, 255, 255, 0.2); /* Light white transparent background */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
 }
 
-.project-details-container {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-  box-sizing: border-box;
+
+
+.text-side {
+  width: 50%; /* Adjust the width as needed */
+  margin-right: 1px; 
 }
 
+.swiper-container{
+  width: 75%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  left: 20%;
+}
+.slide-image {
+  height: 400px;
+  width: auto;
+}
+
+
+
+.project-item.active {
+  
+  border: 8px solid #0079bf; /* Highlight color similar to Trello's blue */
+}
+
+.project-button{
+  padding-left: 1rem
+}
+.glass{
+  opacity: 0.2;
+}
+
+.icon-link {
+  margin-right: 20px;
+}
+
+/* Remove margin for the last icon */
+.icon-link:last-child {
+  margin-right: 0;
+}
+.project-item img {
+  width: 100%;        /* Ensures the image takes up all the available width */
+  height: auto;       /* Keeps the image aspect ratio intact */
+  display: block;     /* Removes bottom space/gap */
+}
 .project-details {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-  background-color: #333;
-  color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-  width: 100%;
-  box-sizing: border-box;
+  align-items: flex-start; /* Align items at the start of the flex container */
+  justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .project-details {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+  }
+
+  .project-details img {
+    width: 100%; /* Full width on smaller screens */
+    max-width: none;
+  }
+
+  .text-side {
+    width: 100%; /* Full width on smaller screens */
+    padding-right: 0; /* Remove padding on smaller screens */
+  }
+}

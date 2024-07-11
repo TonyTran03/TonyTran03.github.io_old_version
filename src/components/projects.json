@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Hot Daddy",
+    "description": [
+      "Built an interactive web application that counts exercise repetitions using AI (Google Teachable Machine).",
+      "Developed the frontend with React and styled it using Tailwind CSS to create a responsive and user-friendly interface.",
+      "Integrated Google Teachable Machine to implement machine learning capabilities."
+    ],
+    "category": "React",
+    "photo": "/public/project_photos/hotdaddy1_photo.png",
+    "phrase": "Temp",
+    "githubUrl": "https://github.com/jeremylau-tech/hotdaddy/tree/main",
+    "projectUrl": "https://www.hotdaddy.co/"
+  },
+  {
+    "name": "2Fold",
+    "description": 
+    ["Notes can often be outgrown and become deprecated. 2Fold aims to breath new life into them as they evolve alongside you in an completely enclosed dynamic education system.",
+    "Programmatically map correlating notes and/or suggests new (progressing or challenging) ones relating to prior knowledge determined by AI."
+
+  ],
+    "category": "React",
+    "photo": "/public/project_photos/2fold_photo.png",
+    "phrase": "Temp",
+    "githubUrl": "https://github.com/rnguyen03/2Fold-AI-Learning-Guide",
+    "projectUrl": "https://hd2.vercel.app/"
+  }
+]

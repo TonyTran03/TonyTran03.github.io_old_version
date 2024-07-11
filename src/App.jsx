@@ -5,6 +5,7 @@ import { CameraControls } from '@react-three/drei';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import './App.css';
+
 function App() {
   
 
