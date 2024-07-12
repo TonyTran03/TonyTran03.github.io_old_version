@@ -2,30 +2,33 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-const handleDownload = (e) => {
-  e.preventDefault(); // Prevent the default anchor behavior
 
-  // Fetch the file
-  fetch('/public/Tony_Tran_Resume.pdf')
-    .then(response => response.blob())
-    .then(blob => {
-      // Create a new URL for the blob
-      const href = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = href;
-      link.setAttribute('download', 'Tony_Tran_Resume.pdf'); // Set the download attribute
-      document.body.appendChild(link);
-      link.click();
-
-      // Clean up
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(href);
-    })
-    .catch(console.error);
-};
 
 
 const Introduction = () => {
+
+  const handleDownload = (e) => {
+    e.preventDefault(); // Prevent the default anchor behavior
+  
+    // Fetch the file
+    fetch('/public/Tony_Tran_Resume.pdf')
+      .then(response => response.blob())
+      .then(blob => {
+        // Create a new URL for the blob
+        const href = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = href;
+        link.setAttribute('download', 'Tony_Tran_Resume.pdf'); // Set the download attribute
+        document.body.appendChild(link);
+        link.click();
+  
+        // Clean up
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(href);
+      })
+      .catch(console.error);
+  };
+
   return (
     <section className="full-width-section">
       <div className="content-wrapper">
