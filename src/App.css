@@ -42,16 +42,6 @@ button.fixed {
   color: white;
 }
 
-@media (max-width: 768px) {
-  .text-section h1 {
-    font-size: 1rem;
-  }
-  .dropdown, .swiper-container {
-      width: 100%;
-      padding: 10px;
-    }
-  
-}
 
 
   .btn-accent{
@@ -177,7 +167,18 @@ button.fixed {
   }
 
   .text-side {
-    width: 100%; /* Full width on smaller screens */
-    padding-right: 0; /* Remove padding on smaller screens */
+    width: 20%; /* Full width on smaller screens */
+    padding-right: 130px; /* Remove padding on smaller screens */
   }
+
+
+  .text-section h1 {
+    font-size: 1rem;
+  }
+  .dropdown, .swiper-container {
+      width: 150%;
+      padding: 2px;
+    }
+
+
 }

@@ -9,19 +9,20 @@ import Project from "./Projects.jsx";
 import { Rocketship } from "./three/Rocketship.jsx";
 import { useEffect, useRef, useState } from "react";
 import { Wproject } from "./three/Wproject.jsx";
+import { DeviceProvider, useDevice } from '../DeviceContext';
+
+
+
+    
+
 
 export const Experience = () => {
+  const { isMobile } = useDevice();
   const controls = useRef();
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const intro = async() => {
-    controls.current.dolly(-7);
-    controls.current.dolly(7, true);
-  };
+
   const diagonal = 212;
-  useEffect(() => {
-    intro();
-  }, []);
 
   const handleScroll = (e) => {
     const scrollOffset = e.target.scrollTop / window.innerHeight;
@@ -38,7 +39,9 @@ export const Experience = () => {
     <>
       <ScrollControls pages={1.8} damping={0.1} onScroll={handleScroll} >
         <Scroll>
-          <CameraControls ref={controls} enabled={false}/>
+          //camera control moves background, we want to disable this for large screen
+          //  but needs to not exist at all for mobile as we want to scroll
+           {!isMobile && <CameraControls enabled={false}/>}  
        
           <Rocketship />
           <>
